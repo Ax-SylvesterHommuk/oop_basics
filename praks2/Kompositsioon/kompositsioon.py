@@ -1,26 +1,18 @@
-class AknadUksed:
-    def __init__(self, laius, kõrgus):
-        self.pindala = laius * kõrgus
+from tuba import Tuba
 
-class Tuba:
-    def __init__(self, pikkus, laius, kõrgus):
-        self.pindala = 2 * kõrgus * (pikkus + laius)
-        self.aknad_uksed = []
-
-    def lisaAkenUks(self, laius, kõrgus):
-        self.aknad_uksed.append(AknadUksed(laius, kõrgus))
-
-    def tööpind(self):
-        uus_pindala = self.pindala
-
-        for element in self.aknad_uksed:
-            uus_pindala = uus_pindala - element.pindala
-        return uus_pindala
+tuba = Tuba(int(input("Sisestage toa pikkus:")), int(input("Sisestage toa laius:")), int(input("Sisestage toa korgus:")))
 
 
-tuba = Tuba(6 ,3, 2.7)
-print(tuba.pindala)
-tuba.lisaAkenUks(1, 1)
-tuba.lisaAkenUks(1 ,1)
-tuba.lisaAkenUks(1, 1)
-print(tuba.tööpind())
+tuba.lisa_Aknad_uks(int(input("Sisestage ukse laius:")), int(input("Sisestage ukse kõrgus:")))
+
+
+valik = input("Kas toas on aknaid? jah/ei : ").lower()
+
+
+while valik == "jah":
+    tuba.lisa_Aknad_uks(int(input("Sisestage akna laius:")), int(input("Sisestage akna korgus:")))
+    valik = input("Kas toas on veel aknaid? jah/ei : ").lower()
+
+
+tuba.tapeedi_rull(int(input("Sisestage tapeedi rulli laius: ")), int(input("Sisestage tapeedi rulli pikkus: ")))
+print("Tapeeti on vaja {0} m2, mis on {1} rulli".format(tuba.toopindala(), round(tuba.tapeedi_rulle)))
