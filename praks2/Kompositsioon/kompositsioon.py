@@ -9,7 +9,7 @@ tuba.lisa_Aknad_uks(int(input("Sisestage ukse laius:")), int(input("Sisestage uk
 valik = input("Kas toas on aknaid? jah/ei : ").lower()
 
 
-while valik == "jah":
+while valik == "jah" or "JAH":
     tuba.lisa_Aknad_uks(int(input("Sisestage akna laius:")), int(input("Sisestage akna korgus:")))
     valik = input("Kas toas on veel aknaid? jah/ei : ").lower()
 
