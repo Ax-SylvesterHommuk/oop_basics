@@ -5,3 +5,4 @@ class Admin(Kasutaja):
 
     def naita_privileegid(self):
         print(self.privileegid)
+        
